@@ -1,3 +1,4 @@
+import { ThemeProvider } from '@/context/ThemeContext';
 import './globals.css';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
@@ -9,10 +10,14 @@ export const metadata: Metadata = {
 	description: 'Software Developer | Web Portfolio',
 };
 
+const style = 'bg-primary dark:bg-primary-dark text-primary dark:text-primary-dark';
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
 	return (
-		<html lang="en">
-			<body className={inter.className}>{children}</body>
-		</html>
+		<ThemeProvider initialTheme="dark">
+			<html lang="en">
+				<body className={`${inter.className} min-h-screen ${style} `}>{children}</body>
+			</html>
+		</ThemeProvider>
 	);
 }
