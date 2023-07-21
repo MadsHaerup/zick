@@ -22,3 +22,8 @@
 		--colors-lightGray5: hsl(0 0% 90.9%);
 	}
 }
+@layer utilities {
+	.blend-lighten {
+		mix-blend-mode: lighten;
+	}
+}
