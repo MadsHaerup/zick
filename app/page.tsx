@@ -1,3 +1,5 @@
+import styles from './Home.module.css';
+
 export default function Home() {
-	return <main className="min-h-screen"></main>;
+	return <main className={`min-h-screen ${styles.container}`}></main>;
 }
