@@ -26,7 +26,7 @@ export const useDock = () => {
 	return useContext(DockContext);
 };
 
-const Dock = () => {
+const Dock = ({ setModal }: any) => {
 	const ref = useRef<HTMLElement>(null);
 	const [hovered, setHovered] = useState(false);
 	const [width, setWidth] = useState<number | undefined>();
@@ -48,7 +48,7 @@ const Dock = () => {
 		<MouseProvider>
 			<footer
 				className={
-					'fixed rounded-full shadow-md bg-inherit dark:bg-[rgba(22, 22, 22, 0.8)] bottom-6 z-10 flex w-auto justify-center border border-primary-border left-1/2 "transform translate-x-[-50%] translate-y-[-50%] animate-menu'
+					'fixed rounded-full shadow-md bg-[rgba(255, 255, 255, 0.7)] dark:bg-[rgba(22, 22, 22, 0.8)] bottom-6 z-50 flex w-auto justify-center border border-primary-border left-1/2 "transform translate-x-[-50%] translate-y-[-50%] animate-menu'
 				}
 			>
 				<DockContext.Provider value={{ hovered, width }}>
@@ -61,6 +61,7 @@ const Dock = () => {
 						<ul className="flex h-10 items-end justify-center space-x-3">
 							<DockItem>
 								<Link
+									onClick={() => setModal(1)}
 									className="relative flex h-full w-full items-center justify-center text-gray-400"
 									aria-label="home page"
 									href="/"
@@ -70,29 +71,35 @@ const Dock = () => {
 								</Link>
 							</DockItem>
 							<DockItem>
-								<a
+								<div
 									className="relative flex h-full w-full items-center justify-center text-gray-400"
-									aria-label="View me on Twitter"
-									href="https://twitter.com/ysj151215"
-									rel="external nofollow noopener noreferrer"
-									target="_blank"
+									onClick={() => setModal(2)}
 								>
 									<EnvelopeIcon className="relative h-1/2 w-1/2" aria-hidden="true" />
-								</a>
+								</div>
 							</DockItem>
 
 							<DockItem>
-								<div className="relative flex h-full w-full items-center justify-center text-gray-400">
+								<div
+									onClick={() => setModal(3)}
+									className="relative flex h-full w-full items-center justify-center text-gray-400"
+								>
 									<Squares2X2Icon className="relative h-1/2 w-1/2" />
 								</div>
 							</DockItem>
 							<DockItem>
-								<div className="relative flex h-full w-full items-center justify-center text-gray-400">
+								<div
+									onClick={() => setModal(4)}
+									className="relative flex h-full w-full items-center justify-center text-gray-400"
+								>
 									<CommandLineIcon className="relative h-1/2 w-1/2" />
 								</div>
 							</DockItem>
 							<DockItem>
-								<div className="relative flex h-full w-full items-center justify-center text-gray-400">
+								<div
+									onClick={() => setModal(5)}
+									className="relative flex h-full w-full items-center justify-center text-gray-400"
+								>
 									<UserIcon className="relative h-1/2 w-1/2" />
 								</div>
 							</DockItem>
