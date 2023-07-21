@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-	safelist: [{ pattern: /^bg-/ }],
+	safelist: [{ pattern: /^bg-/ }, { pattern: /^w-/ }, { pattern: /^h-/ }, { pattern: /^h/ }, { pattern: /^px-/ }],
 	darkMode: 'class',
 	content: [
 		'./pages/**/*.{js,ts,jsx,tsx,mdx}',
@@ -37,10 +37,19 @@ module.exports = {
 					'0%': { transform: 'rotate(40deg)' },
 					'100%': { transform: 'rotate(0deg)' },
 				},
+				scaleIn: {
+					'0%': {
+						transform: 'scale(0)',
+					},
+					'100%': {
+						transform: 'scale(1)',
+					},
+				},
 			},
 			animation: {
 				menu: 'menu 500ms ease 200ms 1 normal forwards running',
 				rotating: 'rotating 1s forwards',
+				scaleIn: 'scaleIn 1000ms ease normal forwards running',
 			},
 		},
 	},
