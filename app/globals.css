@@ -12,6 +12,13 @@
 		--text-secondary: 0 0% 43.5%;
 		--text-secondary-dark: 0 0% 62.8%;
 
-		--border-primary: 0 0% 0% / 0.071;
+		--border-primary: 0 0% 100% / 0.077;
+
+		--colors-gray1: hsl(0 0% 8.5%);
+		--colors-gray2: hsl(0 0% 11%);
+		--colors-gray3: hsl(0 0% 13.6%);
+
+		--colors-lightGray2: hsl(0 0% 97.3%);
+		--colors-lightGray5: hsl(0 0% 90.9%);
 	}
 }

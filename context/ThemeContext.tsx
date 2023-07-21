@@ -2,10 +2,12 @@
 import React, { createContext, useEffect, useState } from 'react';
 
 export interface ThemeContextProps {
+	currentTheme: string;
 	toggleTheme: () => void;
 }
 
 export const ThemeContext = createContext<ThemeContextProps>({
+	currentTheme: '',
 	// eslint-disable-next-line @typescript-eslint/no-empty-function
 	toggleTheme: () => {},
 });
@@ -38,5 +40,7 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children, initialT
 		setCurrentThemeStorage(newTheme);
 	};
 
-	return <ThemeContext.Provider value={{ toggleTheme }}>{children}</ThemeContext.Provider>;
+	return (
+		<ThemeContext.Provider value={{ toggleTheme, currentTheme: currentThemeStorage }}>{children}</ThemeContext.Provider>
+	);
 };

@@ -18,11 +18,29 @@ module.exports = {
 				'primary-dark': 'hsl(var(--text-primary-dark))',
 				secondary: 'hsl(var(--text-secondary))',
 				'secondary-dark': 'hsl(var(--text-secondary-dark))',
-				'border-primary': 'hsl(--border-primary)',
+				'primary-border': 'hsl(var(--border-primary))',
 			},
 			backgroundImage: {
 				'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
 				'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+				'primary-dark-gradient':
+					'linear-gradient(45deg, var(--colors-gray2), var(--colors-gray3), var(--colors-gray2), var(--colors-gray3))',
+				'primary-gradient':
+					'linear-gradient(45deg, var(--colors-lightGray2), var(--colors-lightGray5), var(--colors-lightGray2), var(--colors-lightGray5) )',
+			},
+			keyframes: {
+				menu: {
+					'0%': { opacity: 0, transform: 'translate(-50%, -50%) translateY(80px)' },
+					'100%': { opacity: 1, transform: 'translate(-50%, -50%) translateY(0px)' },
+				},
+				rotating: {
+					'0%': { transform: 'rotate(40deg)' },
+					'100%': { transform: 'rotate(0deg)' },
+				},
+			},
+			animation: {
+				menu: 'menu 500ms ease 200ms 1 normal forwards running',
+				rotating: 'rotating 1s forwards',
 			},
 		},
 	},
