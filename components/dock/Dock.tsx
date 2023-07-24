@@ -41,7 +41,7 @@ const Dock = ({ setModal }: any) => {
 		setIsRotating(true);
 		setTimeout(() => {
 			setIsRotating(false);
-		}, 1000); // Adjust the duration as per your animation CSS
+		}, 1000);
 	};
 
 	return (
@@ -59,7 +59,7 @@ const Dock = ({ setModal }: any) => {
 						onMouseOut={() => setHovered(false)}
 					>
 						<ul className="flex h-10 items-end justify-center space-x-3">
-							<DockItem>
+							<DockItem title="Home">
 								<Link
 									onClick={() => setModal(1)}
 									className="relative flex h-full w-full items-center justify-center text-gray-400"
@@ -70,16 +70,17 @@ const Dock = ({ setModal }: any) => {
 									<HomeIcon className="relative h-1/2 w-1/2 " aria-hidden="true" />
 								</Link>
 							</DockItem>
-							<DockItem>
-								<div
+							<DockItem title="Mail">
+								<a
+									href="mailto:someone@example.com"
 									className="relative flex h-full w-full items-center justify-center text-gray-400"
 									onClick={() => setModal(2)}
 								>
 									<EnvelopeIcon className="relative h-1/2 w-1/2" aria-hidden="true" />
-								</div>
+								</a>
 							</DockItem>
 
-							<DockItem>
+							<DockItem title="">
 								<div
 									onClick={() => setModal(3)}
 									className="relative flex h-full w-full items-center justify-center text-gray-400"
@@ -87,7 +88,7 @@ const Dock = ({ setModal }: any) => {
 									<Squares2X2Icon className="relative h-1/2 w-1/2" />
 								</div>
 							</DockItem>
-							<DockItem>
+							<DockItem title="Projects">
 								<div
 									onClick={() => setModal(4)}
 									className="relative flex h-full w-full items-center justify-center text-gray-400"
@@ -95,7 +96,7 @@ const Dock = ({ setModal }: any) => {
 									<CommandLineIcon className="relative h-1/2 w-1/2" />
 								</div>
 							</DockItem>
-							<DockItem>
+							<DockItem title="Profile">
 								<div
 									onClick={() => setModal(5)}
 									className="relative flex h-full w-full items-center justify-center text-gray-400"
@@ -103,7 +104,7 @@ const Dock = ({ setModal }: any) => {
 									<UserIcon className="relative h-1/2 w-1/2" />
 								</div>
 							</DockItem>
-							<DockItem>
+							<DockItem title="Mode">
 								<div
 									onClick={() => {
 										handleButtonClick();

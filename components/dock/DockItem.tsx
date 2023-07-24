@@ -5,13 +5,14 @@ import { DockContextType, DockItemProps, MouseType } from '../../types';
 import { useDock } from './Dock';
 import { useMouse } from '@/context/MouseProvider';
 
-const DockItem = ({ id, children, ...props }: DockItemProps) => {
+const DockItem = ({ id, title, children, ...props }: DockItemProps) => {
 	const ref = useRef<HTMLButtonElement>(null);
 	const mouse = useMouse() as MouseType;
 	const dock = useDock() as DockContextType;
 
 	const [elCenterX, setElCenterX] = useState<number>(0);
 	const [opened, setOpened] = useState<boolean>(false);
+	const [activeHover, setActiveHover] = useState<boolean>(false);
 	const controls = useAnimationControls();
 
 	const dimension = useTransform(mouse.position.x, mouseX => {
@@ -50,10 +51,12 @@ const DockItem = ({ id, children, ...props }: DockItemProps) => {
 			{...props}
 			onClick={() => {
 				if (!opened) {
-					setOpened(true);
+					// setOpened(true);
 					controls.start(() => ({ translateY: [0, -20, 0] }));
 				}
 			}}
+			onHoverStart={() => setActiveHover(true)}
+			onHoverEnd={() => setActiveHover(false)}
 		>
 			<motion.button
 				ref={ref}
@@ -77,14 +80,10 @@ const DockItem = ({ id, children, ...props }: DockItemProps) => {
 					width: spring,
 				}}
 				whileHover={{
-					// backgroundColor: 'hsl(209, 81.2%, 84.5%)',
-					// borderColor: 'hsl(206, 81.9%, 65.3%)',
 					boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1)',
 				}}
 				whileTap={{ scale: opened ? 1 : 0.85 }}
 				whileFocus={{
-					// backgroundColor: 'hsl(209, 81.2%, 84.5%)',
-					// borderColor: 'hsl(206, 81.9%, 65.3%)',
 					boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1)',
 				}}
 			>
@@ -96,6 +95,15 @@ const DockItem = ({ id, children, ...props }: DockItemProps) => {
 					aria-hidden="true"
 				/>
 			)} */}
+
+			{activeHover && (
+				<span
+					className="absolute -top-6 left-1/2 -translate-x-1/2 bg-primary py-[1px] px-[6px] text-primary rounded-sm text-xs"
+					aria-hidden="true"
+				>
+					{title}
+				</span>
+			)}
 		</motion.li>
 	);
 };

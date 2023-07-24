@@ -24,7 +24,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children, src }) => {
 		<>
 			{isModalOpen && (
 				<div
-					className="fixed m-4 rounded-md inset-0 z-10 bg-no-repeat bg-center object-cover bg-fixed animate-scaleIn"
+					className="fixed m-4 rounded-md inset-0 z-10 bg-no-repeat bg-center object-cover bg-fixed"
 					style={{
 						background: `url(${src})`,
 					}}

@@ -9,6 +9,7 @@ export type DockContextType = {
 export type DockItemProps = {
 	key?: string;
 	id?: string;
+	title?: string;
 	children?: ReactNode;
 };
 

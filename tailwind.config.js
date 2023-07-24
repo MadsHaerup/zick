@@ -45,11 +45,32 @@ module.exports = {
 						transform: 'scale(1)',
 					},
 				},
+				linearLine: {
+					'0%': {
+						background: 'transparent',
+					},
+
+					'50%': {
+						background: 'white',
+					},
+
+					'100%': {
+						width: '100%',
+						background: 'white',
+					},
+				},
+				downtoup: {
+					'0%': { transform: 'translateY(-100%), opacity: 0' },
+					'50%': { transform: 'translateY(0%), opacity: 1' },
+					'100%': { transform: 'translateY(100%), opacity: 0' },
+				},
 			},
 			animation: {
 				menu: 'menu 500ms ease 200ms 1 normal forwards running',
 				rotating: 'rotating 1s forwards',
 				scaleIn: 'scaleIn 1000ms ease normal forwards running',
+				linearLine: 'linearLine 1s ease forwards',
+				downtoup: 'downtoup 1s ease forwards',
 			},
 		},
 	},
