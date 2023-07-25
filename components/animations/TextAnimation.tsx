@@ -3,10 +3,10 @@ import { motion } from 'framer-motion';
 
 type TextAnimationProps = {
 	name: string;
-	delay: number;
+	delay?: number;
 };
 
-const TextAnimation: React.FC<TextAnimationProps> = ({ name, delay }) => {
+const TextAnimation: React.FC<TextAnimationProps> = ({ name, delay = 0.3 }) => {
 	const animationVariants = {
 		initial: {
 			opacity: 0,

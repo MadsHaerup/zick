@@ -12,6 +12,8 @@ import {
 	SunIcon,
 	UserIcon,
 } from '@heroicons/react/24/outline';
+import { SiLinkedin } from 'react-icons/si';
+
 import { useTheme } from '@/hooks/useTheme';
 import Link from 'next/link';
 
@@ -70,27 +72,10 @@ const Dock = ({ setModal }: any) => {
 									<HomeIcon className="relative h-1/2 w-1/2 " aria-hidden="true" />
 								</Link>
 							</DockItem>
-							<DockItem title="Mail">
-								<a
-									href="mailto:someone@example.com"
-									className="relative flex h-full w-full items-center justify-center text-gray-400"
-									onClick={() => setModal(2)}
-								>
-									<EnvelopeIcon className="relative h-1/2 w-1/2" aria-hidden="true" />
-								</a>
-							</DockItem>
 
-							<DockItem title="">
-								<div
-									onClick={() => setModal(3)}
-									className="relative flex h-full w-full items-center justify-center text-gray-400"
-								>
-									<Squares2X2Icon className="relative h-1/2 w-1/2" />
-								</div>
-							</DockItem>
 							<DockItem title="Projects">
 								<div
-									onClick={() => setModal(4)}
+									onClick={() => setModal(2)}
 									className="relative flex h-full w-full items-center justify-center text-gray-400"
 								>
 									<CommandLineIcon className="relative h-1/2 w-1/2" />
@@ -98,11 +83,30 @@ const Dock = ({ setModal }: any) => {
 							</DockItem>
 							<DockItem title="Profile">
 								<div
-									onClick={() => setModal(5)}
+									onClick={() => setModal(3)}
 									className="relative flex h-full w-full items-center justify-center text-gray-400"
 								>
 									<UserIcon className="relative h-1/2 w-1/2" />
 								</div>
+							</DockItem>
+							<DockItem title="Mail">
+								<a
+									href="mailto:someone@example.com"
+									className="relative flex h-full w-full items-center justify-center text-gray-400"
+									onClick={() => setModal(0)}
+								>
+									<EnvelopeIcon className="relative h-1/2 w-1/2" aria-hidden="true" />
+								</a>
+							</DockItem>
+							<DockItem title="LinkedIn">
+								<a
+									href="https://www.linkedin.com/in/mads-h%C3%A6rup/"
+									target="_blank"
+									onClick={() => setModal(0)}
+									className="relative flex h-full w-full items-center justify-center text-gray-400"
+								>
+									<SiLinkedin className="relative h-1/2 w-1/2" />
+								</a>
 							</DockItem>
 							<DockItem title="Mode">
 								<div

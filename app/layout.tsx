@@ -45,7 +45,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 					{modalConfigurations.map(config => {
 						if (config.modalNumber === modal) {
 							return (
-								<Modal isOpen={modalOpen} onClose={handleCloseModal} src={config.imageSrc}>
+								<Modal isOpen={modalOpen} onClose={handleCloseModal}>
 									{config.content}
 								</Modal>
 							);
