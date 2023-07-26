@@ -1,19 +1,16 @@
 'use client';
 import { motion } from 'framer-motion';
-import styles from './Home.module.css';
 import Weather from '@/components/weather/Weather';
-import Slider from '@/components/imageSlider/ImageSlider';
 import GlitchImage from '@/components/animations/GlitchImage';
-import ScaleIn from '@/components/animations/ScaleIn';
 import Glitch from '@/components/animations/GlitchText';
 
 export default function Home() {
 	return (
-		<main className={`min-h-screen ${styles.container}`}>
+		<main className={`min-h-screen noise`}>
 			<div className="grid h-screen w-screen mx-auto justify-center text-6xl items-center">
 				<div>
-					<Glitch content="mads haerup" tailwindCSS="mb-6" />
-					<div className="flex gap-4">
+					<Glitch content="mads haerup" tailwindCSS="mb-6 text-center" />
+					<div className="grid grid-cols-3 gap-4 mx-auto">
 						<div className="translate-y-10 grayscale hover:grayscale-0">
 							<motion.div
 								initial={{ opacity: 0, scale: 0.8 }}

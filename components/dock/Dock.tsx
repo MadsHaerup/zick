@@ -28,7 +28,7 @@ export const useDock = () => {
 	return useContext(DockContext);
 };
 
-const Dock = ({ setModal }: any) => {
+const Dock = () => {
 	const ref = useRef<HTMLElement>(null);
 	const [hovered, setHovered] = useState(false);
 	const [width, setWidth] = useState<number | undefined>();
@@ -63,7 +63,6 @@ const Dock = ({ setModal }: any) => {
 						<ul className="flex h-10 items-end justify-center space-x-3">
 							<DockItem title="Home">
 								<Link
-									onClick={() => setModal(1)}
 									className="relative flex h-full w-full items-center justify-center text-gray-400"
 									aria-label="home page"
 									href="/"
@@ -74,26 +73,22 @@ const Dock = ({ setModal }: any) => {
 							</DockItem>
 
 							<DockItem title="Projects">
-								<div
-									onClick={() => setModal(2)}
+								<Link
+									href="/projects"
 									className="relative flex h-full w-full items-center justify-center text-gray-400"
 								>
 									<CommandLineIcon className="relative h-1/2 w-1/2" />
-								</div>
+								</Link>
 							</DockItem>
 							<DockItem title="Profile">
-								<div
-									onClick={() => setModal(3)}
-									className="relative flex h-full w-full items-center justify-center text-gray-400"
-								>
+								<Link href="/profile" className="relative flex h-full w-full items-center justify-center text-gray-400">
 									<UserIcon className="relative h-1/2 w-1/2" />
-								</div>
+								</Link>
 							</DockItem>
 							<DockItem title="Mail">
 								<a
 									href="mailto:someone@example.com"
 									className="relative flex h-full w-full items-center justify-center text-gray-400"
-									onClick={() => setModal(0)}
 								>
 									<EnvelopeIcon className="relative h-1/2 w-1/2" aria-hidden="true" />
 								</a>
@@ -102,7 +97,6 @@ const Dock = ({ setModal }: any) => {
 								<a
 									href="https://www.linkedin.com/in/mads-h%C3%A6rup/"
 									target="_blank"
-									onClick={() => setModal(0)}
 									className="relative flex h-full w-full items-center justify-center text-gray-400"
 								>
 									<SiLinkedin className="relative h-1/2 w-1/2" />

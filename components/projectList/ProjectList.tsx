@@ -1,9 +1,9 @@
+'use client';
 import React, { useEffect, useState } from 'react';
 import { projects } from '@/data/projects';
 import Link from 'next/link';
 import TextAnimation from '../animations/TextAnimation';
 import CrypticContainer from '../cryptic/CrypticContainer';
-import { CursorArrowRaysIcon } from '@heroicons/react/24/outline';
 
 type Project = {
 	title: string;
@@ -20,7 +20,11 @@ const ProjectList: React.FC = () => {
 	}, []);
 
 	if (!projectList) {
-		return <div>Loading...</div>;
+		return (
+			<div className="w-full grid justify-center">
+				<p>Loading...</p>
+			</div>
+		);
 	}
 
 	return (
@@ -42,9 +46,7 @@ const ProjectList: React.FC = () => {
 						</h1>
 						<p className=" dark:text-gray-300">{project.description}</p>
 						<div className="flex-1 mx-2 relative before:content-[''] before:w-0 before:h-[1px] before:-bottom-1 before:animate-linearLine before:z-10 before:absolute after:content-[''] after:w-0 after:h-[1px] after:-bottom-1 after:animate-linearLine after:z-10 after:absolute"></div>
-						<p>
-							<TextAnimation name={project.date} />
-						</p>
+						<TextAnimation name={project.date} />
 					</div>
 				</Link>
 			))}
