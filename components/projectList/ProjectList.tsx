@@ -28,24 +28,24 @@ const ProjectList: React.FC = () => {
 	}
 
 	return (
-		<div className="grid gap-y-4">
+		<div className="grid">
 			{projectList.map((project, index) => (
 				<Link
 					key={index}
 					href={project.link}
-					className="text-primary dark:text-primary-dark text-sm relative"
+					className="text-primary dark:text-primary-dark text-sm relative "
 					target="_blank"
 				>
 					<div
 						key={index}
-						className="flex gap-1 relative overflow-hidden items-center"
+						className="flex gap-1 relative overflow-hidden items-center hover:bg-neutral-300 dark:hover:bg-neutral-400 p-4 rounded-md"
 						style={{ width: 'calc(100% + 32px' }}
 					>
 						<h1 className="font-bold">
 							<CrypticContainer sentence={project.title} />
 						</h1>
 						<p className=" text-secondary">{project.description}</p>
-						<div className="flex-1 mx-2 relative before:content-[''] before:w-0 before:h-[1px] before:-bottom-1 before:animate-linearLine before:z-10 before:absolute after:content-[''] after:w-0 after:h-[1px] after:-bottom-1 after:animate-linearLine after:z-10 after:absolute"></div>
+						<div className=" flex-1 mx-2 relative before:content-[''] before:w-0 before:h-[1px] before:-bottom-1 before:animate-linearLine before:z-10 before:absolute after:content-[''] after:w-0 after:h-[1px] after:-bottom-1 after:animate-linearLine after:z-10 after:absolute"></div>
 						<TextAnimation name={project.date} tailwindCSS="text-secondary" />
 					</div>
 				</Link>

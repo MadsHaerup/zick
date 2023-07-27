@@ -2,7 +2,6 @@ import React from 'react';
 import SkillContainer from '@/components/skills/SkillContainer';
 import skills from '@/data/skill';
 import Heading from '@/components/animations/Heading';
-import BgScale from '@/components/animations/BgScale';
 
 const page = () => {
 	return (
