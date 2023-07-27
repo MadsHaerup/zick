@@ -4,9 +4,10 @@ import { motion } from 'framer-motion';
 type TextAnimationProps = {
 	name: string;
 	delay?: number;
+	tailwindCSS?: string;
 };
 
-const TextAnimation: React.FC<TextAnimationProps> = ({ name, delay = 0.3 }) => {
+const TextAnimation: React.FC<TextAnimationProps> = ({ name, delay = 0.3, tailwindCSS }) => {
 	const animationVariants = {
 		initial: {
 			opacity: 0,
@@ -35,7 +36,12 @@ const TextAnimation: React.FC<TextAnimationProps> = ({ name, delay = 0.3 }) => {
 	};
 
 	return (
-		<motion.div initial="initial" animate="animate" variants={animationVariants} className="text-center py-2">
+		<motion.div
+			initial="initial"
+			animate="animate"
+			variants={animationVariants}
+			className={`text-center py-2 ${tailwindCSS}`}
+		>
 			{name.split('').map((char, index) => {
 				return (
 					<motion.span

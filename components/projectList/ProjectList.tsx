@@ -44,9 +44,9 @@ const ProjectList: React.FC = () => {
 						<h1 className="font-bold">
 							<CrypticContainer sentence={project.title} />
 						</h1>
-						<p className=" dark:text-gray-300">{project.description}</p>
+						<p className=" text-secondary">{project.description}</p>
 						<div className="flex-1 mx-2 relative before:content-[''] before:w-0 before:h-[1px] before:-bottom-1 before:animate-linearLine before:z-10 before:absolute after:content-[''] after:w-0 after:h-[1px] after:-bottom-1 after:animate-linearLine after:z-10 after:absolute"></div>
-						<TextAnimation name={project.date} />
+						<TextAnimation name={project.date} tailwindCSS="text-secondary" />
 					</div>
 				</Link>
 			))}

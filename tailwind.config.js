@@ -51,12 +51,12 @@ module.exports = {
 					},
 
 					'50%': {
-						background: 'white',
+						background: 'hsl(var(--text-secondary))',
 					},
 
 					'100%': {
 						width: '100%',
-						background: 'white',
+						background: 'hsl(var(--text-secondary))',
 					},
 				},
 				downtoup: {
